@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { withTranslation } from "react-i18next";
+import styled from "styled-components";
+// Redux
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import "./App.css";
+import { store } from "./config/store";
+import { Navbar, Body } from "./layouts";
 
-function App() {
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--grey-background);
+`;
+
+const App = () => {
+
+  let persistor = persistStore(store);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Container>
+              <Navbar/>
+              <Body/>
+            </Container>
+          </PersistGate>
+        </Provider>
+      </div>
+    </>
   );
 }
 
-export default App;
+export default withTranslation()(App);

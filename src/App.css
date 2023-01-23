@@ -1,3 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+	/* Colors: */
+	--white: #ffffff;
+	--grey-field: #f8f8f8;
+	--grey-background: #f5f5f5;
+	--grey-1: #cfcfcf;
+	--grey-2: #aeaeae;
+	--darkgrey: #6e6e6e;
+	--black: #202020;
+	--pink: pink;
+  --blue: #2480dc;
+	--purple: #840088;
+	--orange: #e87400;
+	--yellow: #ffb100;
+	--yellow-o10: #ffb1001a;
+	--yellow-o20: #ffb10033;
+	--red: #d22a16;
+	--red-o10: #d22a161a;
+	--red-o20: #d22a1633;
+	--green: #16b240;
+	--green-o10: #16b2401a;
+	--green-o20: #16b24033;
+	--gold-yellow: #fff6e5;
+	--gold-yellow-hover: #ffeabf;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+body {
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+#root,
+#root > div {
+	height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }

@@ -1,0 +1,16 @@
+div.adaptable-textarea-field {
+	width: 100%;
+	height: 100%;
+	border: 1px solid var(--grey-1);
+	border-radius: 6px;
+	background-color: var(--grey-field);
+	outline: none;
+	padding: 6px 20px;
+	max-height: 8em;
+	overflow-y: hidden;
+}
+
+div.adaptable-textarea-field[contentEditable="false"] {
+	min-height: 38px;
+	background-color: var(--white);
+}
